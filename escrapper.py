@@ -12,11 +12,12 @@ app.config.from_object('config')
 def home():
 	form = SearchForm()
 	result = {}
+	ptyp = ""
 	#validating and processing form data
 	if form.validate_on_submit():
 		flash('Product  : %s' % (form.product_name.data))
+		#tranferring input data to web scrapping script
 		result = scrapping.scrap_input(form.product_name.data)
-		return redirect('/')
 	
 	return render_template('index.html', form=form, result=result)
 
