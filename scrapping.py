@@ -8,8 +8,7 @@ def scrap_input(usr_input):
     inp = usr_input.split()
     format_input = "+".join(inp)
     
-    url = "http://www.junglee.com/mn/search/junglee/ref=nb_sb_is\
-s_cat_00000_3?url=search-alias%3Daps&field-keywords="+format_input+"&rush=n"
+    url = "http://www.junglee.com/mn/search/junglee/ref=nb_sb_iss_cat_00000_9?url=node%3Daps&field-keywords="+format_input+"&rush=n"
 
     #Grabbing Html from the url
     response = urllib2.urlopen(url)
