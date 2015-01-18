@@ -18,7 +18,10 @@
 	  </form>
 	  
 	  {% if result %}
-	    {{ result }}
+		{% for name, price in result.items() %}
+	      <p>Product name : {{name}}<p>
+		  <p>Price : {{price}}</p>
+		{% endfor %}
 	  {% endif %}
 	  
 {% endblock %}
