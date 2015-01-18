@@ -2,10 +2,23 @@
 {% block content %}
 
 	  <!-- just use a number and class 'column' or 'columns' -->
-	  <div class="row">
-		<div class="four columns">
-		  <input type="text" placeholder="Enter Product Name.."/>
-		</div>
-		<div class="eight columns"><button>Search</button></div>
-	  </div>
+	  <form action="" method="post" name="search">
+	      {{ form.hidden_tag() }} <!--implements the CSRF prevention -->
+		  <div class="row">
+			  <div class="four columns">
+				{{ form.product_name(size=25) }}
+				 {% for error in form.product_name.errors %}
+				    <span style="color: red;">[{{ error }}]</span>
+				  {% endfor %}<br>
+			  </div>
+			  <div class="eight columns">
+				<button type="submit">Search</button>
+			  </div>
+		  </div>
+	  </form>
+	  
+	  {% if result %}
+	    {{ result }}
+	  {% endif %}
+	  
 {% endblock %}
