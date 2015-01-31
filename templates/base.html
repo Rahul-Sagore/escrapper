@@ -1,8 +1,9 @@
 <!doctype html>
 <html>
   <head>
-    <title>Home | Escrapper</title>
+    <title>Home | Estripper</title>
     <link rel="stylesheet" type="text/css" href="/static/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
   </head>
   
   <body>
@@ -10,30 +11,19 @@
   	<div class="container">
 
 	  <!-- columns should be the immediate child of a .row -->
-	  <div class="row">
-		<div class="two columns"><h4>Escrapper</h4></div>
+	  <div class="row" id="header">
+		<div class="two columns"><h4>Estripper</h4></div>
 		<div class="ten columns">
-		  Welcome to Escrapper (E-scrapper or Ecommerce scrapper)<br>
+		  Welcome to Estripper (Ecommerce scrapper)<br>
 		  For finding cheapest product around the ecommerce website
 		</div>
 	  </div><br>
 
-	  <!-- block for flash messages -->
-	  <ul>
-	    {% with messages = get_flashed_messages() %}
-	      {% if messages %}
-	        <ul>
-	          {% for message in messages %}
-	            <li>{{ message }}</li>
-	          {% endfor %}
-	        </ul>
-	       {% endif %}
-	     {% endwith %}
 
 	  <!-- block for Page content -->
 	  {% block content %}{% endblock %}
 
-	</div>
+	</div><!-- ./container class -->
   	
   </body>
   

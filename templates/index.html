@@ -5,22 +5,32 @@
 	  <form action="" method="post" name="search">
 	      {{ form.hidden_tag() }} <!--implements the CSRF prevention -->
 		  <div class="row">
-			  <div class="four columns">
+			  <div class="three columns">
 				{{ form.product_name(size=25) }}
 				 {% for error in form.product_name.errors %}
 				    <span style="color: red;">[{{ error }}]</span>
 				  {% endfor %}<br>
 			  </div>
 			  <div class="eight columns">
-				<button type="submit">Search</button>
+				<button type="submit" class="button button-primary">Search</button>
 			  </div>
 		  </div>
 	  </form>
+
+	  {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul>
+            {% for message in messages %}
+              <li class="searchMsg">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
 	  
 	  {% if result %}
 		{% for name, price in result.items() %}
-	      <p>Product name : {{name}}<p>
-		  <p>Price : {{price}}</p>
+	      <p>Product name : {{ name }}<p>
+		  <p>Price : Rs. {{ price[10:] }}</p>
 		{% endfor %}
 	  {% endif %}
 	  
