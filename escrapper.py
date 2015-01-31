@@ -16,7 +16,7 @@ def home():
 	ptyp = ""
 	#validating and processing form data
 	if form.validate_on_submit():
-		messages = flash('Search results for : %s' % (form.product_name.data))
+		flash('Search results for : %s' % (form.product_name.data))
 		#transferring input data to web scrapping script
 		result = scrapping.scrap_input(form.product_name.data)
 	
