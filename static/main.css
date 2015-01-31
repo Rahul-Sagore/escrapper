@@ -2,7 +2,6 @@
 * Custom Css file for estripper
 * Author - Rahul Sagore
 */
-
 #header{
 
 }
@@ -10,4 +9,7 @@
 	background: #58CE6E;
 	list-style: none;
 	padding-left: 10px;
+}
+.disc{
+	color: red;
 }
