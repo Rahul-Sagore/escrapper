@@ -8,22 +8,37 @@
   
   <body>
   
-  	<div class="container">
+  	<div class="wrapper">
+	  	<div class="container">
 
-	  <!-- columns should be the immediate child of a .row -->
-	  <div class="row" id="header">
-		<div class="two columns"><h4>Estripper</h4></div>
-		<div class="ten columns">
-		  Welcome to Estripper (Ecommerce scrapper) - <span class="disc">Work Under-construction</span><br>
-		  For finding cheapest product around the ecommerce website
+		  <!-- columns should be the immediate child of a .row -->
+		  <div class="row" id="header">
+			<div class="two columns"><h4>Estripper</h4></div>
+			<div class="ten columns">
+			  Welcome to Estripper (Ecommerce scrapper) - <span class="disc">Work Under-construction</span><br>
+			  For finding cheapest product around the ecommerce website
+			</div>
+		  </div><br>
+
+		  <!-- block for Page content -->
+		  {% block content %}{% endblock %}
+
+		</div><!-- ./container class -->
+	</div><!-- ./Wrapper class -->
+
+  	<footer>
+  		<div class="container">
+  		  <div class="eight columns">
+			Developed by - Rahul Sagore
+		  </div>
+		  <div class="four columns">
+		   Find me on :
+		     <a href="https://github.com/Rahul-Sagore">Github</a> -
+		     <a href="https://in.linkedin.com/in/rahulsagore">LinkedIn</a> -
+		     <a href="https://twitter.com/rahulx1">Twitter</a>
+		  </div> 
 		</div>
-	  </div><br>
-
-
-	  <!-- block for Page content -->
-	  {% block content %}{% endblock %}
-
-	</div><!-- ./container class -->
+  	</footer>
   	
   </body>
   
