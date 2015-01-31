@@ -2,6 +2,13 @@
 * Custom Css file for estripper
 * Author - Rahul Sagore
 */
+html, body{
+	height: 100%;
+}
+.wrapper{
+	min-height: 600px;
+	margin-bottom: -10px;
+}
 #header{
 
 }
@@ -12,4 +19,10 @@
 }
 .disc{
 	color: red;
+}
+footer{
+	height: 10px;
+	color: white;
+	padding: 25px;
+	background: #3D3434;
 }
