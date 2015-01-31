@@ -6,7 +6,7 @@
 	      {{ form.hidden_tag() }} <!--implements the CSRF prevention -->
 		  <div class="row">
 			  <div class="three columns">
-				{{ form.product_name(size=25) }}
+				{{ form.product_name(size=25, placeholder="Enter Product Name") }}
 				 {% for error in form.product_name.errors %}
 				    <span style="color: red;">[{{ error }}]</span>
 				  {% endfor %}<br>
