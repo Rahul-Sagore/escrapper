@@ -16,7 +16,7 @@ def home():
 	price = []
 	#validating and processing form data
 	if form.validate_on_submit():
-		flash('Search results for : %s' % (form.product_name.data))
+		flash('Showing results for : %s' % (form.product_name.data))
 		#transferring input data to web scrapping script
 		title, price = scrapping.scrap_input(form.product_name.data)
 	
