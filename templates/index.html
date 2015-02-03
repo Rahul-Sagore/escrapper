@@ -29,14 +29,28 @@
 		  </div><!-- ./row class -->
 	  </form>
 
-	  {% if title|length > 1 %}
-		{% for i in range(title|length) %}
-	      <p>Product name : {{ title[i][2:] }}<p>
-		  <p>Price : {{ price[i]|safe }}</p>
-		  <!-- Length & Safe are filters in jina2 for length of element & Safe used for rendering html tags  -->
-		{% endfor %}
-	  {% else %}
-	  	 Search for a product
-	  {% endif %}
+	  <div class="row">
+
+	  	<div class="six columns">
+	  		<h5> On Junglee.com</h5>
+	  		{% if title|length > 1 %}
+
+				{% for i in range(title|length) %}
+			      <p>Product name : {{ title[i][1:]|safe }}><p>
+				  <p>Price : {{ price[i]|safe }}</p>
+				  <!-- Length & Safe are filters in jina2 for length of element & Safe used for rendering html tags  -->
+				{% endfor %}
+		  {% else %}
+		  	 Search for a product
+		  {% endif %}
+
+	  	</div>
+	  	<div class="six columns">
+	  	<h5> On BuyHatke.com</h5>
+	  	</div>
+
+	  </div>
+
+	  
 	  
 {% endblock %}
