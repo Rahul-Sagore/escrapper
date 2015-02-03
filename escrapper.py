@@ -14,7 +14,6 @@ def home():
 	form = SearchForm()
 	title = []
 	price = []
-	ptyp = ""
 	#validating and processing form data
 	if form.validate_on_submit():
 		flash('Search results for : %s' % (form.product_name.data))
