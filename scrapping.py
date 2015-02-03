@@ -27,9 +27,7 @@ def scrap_input(usr_input):
     product_list = str_to_list(products)
     price_list = str_to_list(prices)
 
-	# Mapping of product_list and price_list into dictionary
-    prod_dic = dict(zip(product_list, price_list))
-    return prod_dic
+    return product_list, product_price
 
 #Custom function for finding particular tag with specific attribute
 def get_product(tag, attr, val, soup):
