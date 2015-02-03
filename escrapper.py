@@ -12,15 +12,16 @@ app.config.from_object('config')
 @app.route('/', methods=['GET', 'POST'])
 def home():
 	form = SearchForm()
-	result = {}
+	title = []
+	price = []
 	ptyp = ""
 	#validating and processing form data
 	if form.validate_on_submit():
 		flash('Search results for : %s' % (form.product_name.data))
 		#transferring input data to web scrapping script
-		result = scrapping.scrap_input(form.product_name.data)
+		title, price = scrapping.scrap_input(form.product_name.data)
 	
-	return render_template('index.html', form=form, result=result)
+	return render_template('index.html', form=form, title=title, price=price)
 
 with app.test_request_context():
 	url_for('static', filename='skeleton.css')
