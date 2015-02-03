@@ -38,9 +38,9 @@ def get_product(tag, attr, val, soup):
     titles = soup.findAll(tag, attrs={attr : val})
     
     #Fetching content of the tag using regular expression
-    match = re.findall(r'<'+tag+'[^>]*?>(.*?)</'+tag+'>', str(titles))
+    #match = re.findall(r'<'+tag+'[^>]*?>(.*?)</'+tag+'>', str(titles))
     
-    return str(match)
+    return str(titles)
 
 #Custom function for getting price
 def get_price(price_text):
@@ -52,7 +52,7 @@ def get_price(price_text):
 def str_to_list(string):
     '''Accepts a string and returns list of by spliting'''
     
-    return string.split("',")
+    return string.split(">,")
 
     
 
