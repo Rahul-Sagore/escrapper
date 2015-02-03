@@ -26,12 +26,15 @@
           </ul>
         {% endif %}
       {% endwith %}
-	  
-	  {% if result %}
-		{% for name, price in result.items() %}
-	      <p>Product name : {{ name }}<p>
-		  <p>Price : Rs. {{ price[10:] }}</p>
+
+	  {% if title|length > 1 %}
+		{% for i in range(title|length) %}
+	      <p>Product name : {{ title[i][2:] }}<p>
+		  <p>Price : {{ price[i]|safe }}</p>
+		  <!-- Length & Safe are filters in jina2 for length of element & Safe used for rendering html tags  -->
 		{% endfor %}
+	  {% else %}
+	  	 No result found
 	  {% endif %}
 	  
 {% endblock %}
