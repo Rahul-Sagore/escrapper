@@ -4,18 +4,19 @@
 */
 html, body{
 	height: 100%;
+	font-family: Raleway;
 }
 .wrapper{
 	min-height: 600px;
 	margin-bottom: -10px;
 }
 #header{
-
+	background: #3D3434;
+	color: white;
 }
 .searchMsg{
-	background: #58CE6E;
 	list-style: none;
-	padding-left: 10px;
+	padding: 8px;
 }
 .disc{
 	color: red;
