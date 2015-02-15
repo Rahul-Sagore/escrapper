@@ -12,15 +12,17 @@ app.config.from_object('config')
 @app.route('/', methods=['GET', 'POST'])
 def home():
 	form = SearchForm()
-	title = []
-	price = []
+	jung_products = []
+	jung_prices = []
+	smart_products = []
+	smart_prices = []
 	#validating and processing form data
 	if form.validate_on_submit():
 		flash('Showing results for : %s' % (form.product_name.data))
 		#transferring input data to web scrapping script
-		title, price = scrapping.scrap_input(form.product_name.data)
+		jung_products, jung_prices, smart_products, smart_prices = scrapping.scrap_input(form.product_name.data)
 	
-	return render_template('index.html', form=form, title=title, price=price)
+	return render_template('index.html', form=form, jung_products=jung_products, jung_prices=jung_prices, smart_products=smart_products, smart_prices=smart_prices)
 
 with app.test_request_context():
 	url_for('static', filename='skeleton.css')
