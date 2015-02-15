@@ -20,7 +20,7 @@ def scrap_input(usr_input):
     jung_prices = get_result('span', "class", "price", jung_soup)
 
     smart_prod = get_result('div', "class", "info", smart_soup)
-    smart_products = re.findall(r'<h2>(.*?)</h2>', str(smart_prod))
+    smart_products = add_url(smart_prod)
     smart_prices = get_result('span', "class", "price", smart_soup)
 
     return jung_products, jung_prices, smart_products, smart_prices
@@ -43,3 +43,14 @@ def get_result(tag, attr, val, soup):
     results = soup.findAll(tag, attrs={attr : val})
 
     return list(results)
+
+def add_url(prod):
+    #Changing
+    products_link = re.findall(r'<h2>(.*?)</h2>', str(prod))
+    relevent_links = []
+    for product in products_link:
+        prod = list(product)
+        prod.insert(9, 'http://www.smartprix.com')
+        product = ''.join(prod)
+        relevent_links.append(product)
+    return relevent_links
