@@ -21,6 +21,17 @@ html, body{
 .disc{
 	color: red;
 }
+.webname{
+	font-size: 18px;
+	text-align: center;
+	color:white;
+}
+#jungname{
+	background: #E76B02;
+}
+#smartname{
+	background: #4692F0;
+}
 footer{
 	height: 10px;
 	color: white;
