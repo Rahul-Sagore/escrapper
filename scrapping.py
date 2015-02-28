@@ -12,8 +12,8 @@ def scrap_input(usr_input):
     junglee_url = "http://www.junglee.com/mn/search/junglee/ref=nb_sb_iss_cat_00000_9?url=node%3Daps&field-keywords="+format_input+"&rush=n"
     smartprix_url = "http://www.smartprix.com/products/?q="+format_input+"&cat=all"
 
-    jung_soup = get_soup(junglee_url, format_input)
-    smart_soup = get_soup(smartprix_url, format_input)
+    jung_soup = get_soup(junglee_url)
+    smart_soup = get_soup(smartprix_url)
     
     #Calling fuction for finding text in html
     jung_products = get_result('a', "class", "title", jung_soup)
@@ -25,9 +25,11 @@ def scrap_input(usr_input):
 
     return jung_products, jung_prices, smart_products, smart_prices
 
-def get_soup(url, input):
+def get_soup(url):
     #Grabbing Html from the url
-    response = urllib2.urlopen(url)
+    #Adding header to fool the web server
+    req = urllib2.Request(url, headers={'User-Agent' : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.30 (KHTML, like Gecko) Ubuntu/11.04 Chromium/12.0.742.112 Chrome/12.0.742.112 Safari/534.30"}) 
+    response = urllib2.urlopen(req)
     html = response.read()
     
     #Creating beautifulsoup object
@@ -45,7 +47,7 @@ def get_result(tag, attr, val, soup):
     return list(results)
 
 def add_url(prod):
-    #Changing
+    #Adding url in between string
     products_link = re.findall(r'<h2>(.*?)</h2>', str(prod))
     relevent_links = []
     for product in products_link:
