@@ -27,7 +27,7 @@ html, body{
 }
 
 .full-width {
-	width: 100%;
+	width: 1140px;
 	max-width: 100%;
 	clear: both;
 	margin: 0 auto;
@@ -36,7 +36,7 @@ html, body{
 /*Css for header section*/
 
 #header{
-	background: #F44336;
+	background: #D81B60;
     color: #FFFFFF;
 	padding: 20px;
 }
@@ -51,15 +51,19 @@ html, body{
 	font-size: 30px;
 }
 
+#search-form{
+	margin-bottom: 0px;
+}
 
 #product_name{
 	width: 100%;
-	min-width: 425px;
+	min-width: 280px;
 	border-radius: 0px;
 }
 
 #product-search{
 	margin-left: -5px;
+	padding: 0px 15px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     line-height: 0;

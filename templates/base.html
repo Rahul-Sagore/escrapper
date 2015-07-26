@@ -26,25 +26,42 @@
 
   	<div class="wrapper">
 	  	<div id="header">
-		   <div class="container">
-			  <div class="row">
-				<div class="two columns">
-					<div class="logo">
-						Estripper
+		    <div class="full-width">
+				<div class="row">
+					<div class="two columns">
+						<div class="logo">
+							Estripper
+						</div>
 					</div>
-				</div>
-				<div class="ten columns">
-					<div class="welcome">
-					  Welcome to Estripper (Ecommerce scrapper) - <span class="disc">Beta Version</span><br>
-					  Find cheapest product around the ecommerce website
+					<div class="five columns">
+						<div class="welcome">
+						  Welcome to Estripper (Ecommerce scrapper)<br>
+						  Find cheapest product around the ecommerce website
+						</div>
 					</div>
-				</div>
+					<div class="five columns">
+						<!-- just use a number and class 'column' or 'columns' -->
+						 <form action="" method="post" name="search" id="search-form">
+						    {{ form.hidden_tag() }} <!--implements the CSRF prevention -->
+						  	<div class="form-group">
+						  		<div class="input-group">
+						  			{{ form.product_name(size=45, placeholder="Enter Product Name") }}
+						  		</div>
+								<div class="input-group">
+									<button type="submit" id="product-search" class="button button-primary"><i class="fa fa-search fa-fw"></i>&nbsp; Search</button>
+								</div>
+							</div>
+							{% for error in form.product_name.errors %}
+						    	<span style="color: red;">[{{ error }}]</span>
+						    {% endfor %}
+						</form>
+					</div>
 			  </div>
 			</div><!-- ./container class for header -->
 		</div><!-- #header end -->
 
 		<!-- Block for content -->
-		<div class="container">
+		<div class="full-width">
 		  {% block content %}{% endblock %}
 		</div><!-- ./container class for products -->
 

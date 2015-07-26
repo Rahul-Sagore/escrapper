@@ -1,37 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 	 <br>
-	 <!-- just use a number and class 'column' or 'columns' -->
-	 <form action="" method="post" name="search">
-	    {{ form.hidden_tag() }} <!--implements the CSRF prevention -->
+
+	 <!-- Flash Message to be displayed -->
+	<div class="full-width">
 		<div class="row">
-			<div class="eight columns">
-			  	<div class="form-group">
-			  		<div class="input-group">
-			  			{{ form.product_name(size=45, placeholder="Enter Product Name") }}
-			  		</div>
-					<div class="input-group">
-						<button type="submit" id="product-search" class="button button-primary"><i class="fa fa-search fa-fw"></i>&nbsp; Search</button>
-					</div>
-				</div>
-				{% for error in form.product_name.errors %}
-			    	<span style="color: red;">[{{ error }}]</span>
-			    {% endfor %}
-			</div>
-			  <!-- Flash Message to be displayed -->
-			<div class="four columns">
-				{% with messages = get_flashed_messages() %}
-		        {% if messages %}
-		          <ul>
-		            {% for message in messages %}
-		              <li class="searchMsg">{{ message }}</li>
-		            {% endfor %}
-		          </ul>
-		       {% endif %}
-		       {% endwith %}
-			</div>
-		</div><!-- ./row class -->
-	</form>
+			{% with messages = get_flashed_messages() %}
+	        {% if messages %}
+	          <ul>
+	            {% for message in messages %}
+	              <li class="searchMsg">{{ message }}</li>
+	            {% endfor %}
+	          </ul>
+	       {% endif %}
+	       {% endwith %}
+		</div>
+	</div>
 
 	<div class="row">
 
