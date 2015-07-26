@@ -4,14 +4,14 @@
 */
 html, body{
 	height: 100%;
-	margin: 0;
+    margin: 0;
 	font-family: Raleway;
 }
 
-/*.wrapper{
-	min-height: 600px;
-	margin-bottom: -10px;
-}*/
+.wrapper{
+	min-height: 100%;
+	margin-bottom: -80px;
+}
 
 /*Genreal css functionality*/
 .text-center{
@@ -20,6 +20,17 @@ html, body{
 
 .uppercase{
 	text-transform: uppercase;
+}
+
+.no-anchor{
+	text-decoration: none;
+}
+
+.full-width {
+	width: 100%;
+	max-width: 100%;
+	clear: both;
+	margin: 0 auto;
 }
 
 /*Css for header section*/
@@ -52,6 +63,7 @@ html, body{
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     line-height: 0;
+    font-size: 12px;
 }
 
 .form-group > .input-group{
@@ -82,13 +94,38 @@ html, body{
 	background: #4692F0;
 }
 
+/*Sticky footer*/
+.wrapper:after {
+  content: "";
+  display: block;
+}
+footer, .wrapper:after {
+  height: 80px;
+}
+
 footer{
 	color: white;
-    padding: 41px 20px;
-    background: #3D3434;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: block;
+    background: #32415E;
+}
+
+.about a {
+    margin: 7px;
+    font-size: 17px;
+    color: white;
+}
+
+.connect a {
+    padding: 2px;
+}
+
+.connect .fa-github-square {
+    color: white;
+}
+
+.connect .fa-linkedin-square {
+    color: #0177B5;
+}
+
+.connect .fa-twitter-square {
+    color: #55ACEE;
 }
