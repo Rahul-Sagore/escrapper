@@ -5,7 +5,6 @@ from BeautifulSoup import BeautifulSoup
 
 # Genreral function for returning BeautifulSoup Object of html
 def get_soup(url, input):
-
     # Setting header to resolve 403 forbidden error
     header = {
         'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
@@ -33,7 +32,7 @@ def get_result(tag, attr, val, soup):
 
 # Custom function for adding url to the smartprix product
 def add_url(prod):
-    #Changing
+    #Adding url in between string
     products_link = re.findall(r'<h2>(.*?)</h2>', str(prod))
     relevent_links = []
     for product in products_link:
